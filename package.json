@@ -9,15 +9,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/material": "^5.10.15",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-scroll": "^1.8.8",
     "styled-components": "^5.3.6",
     "tailwind.macro": "^1.0.0-alpha.10"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@types/react-scroll": "^1.8.5",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
