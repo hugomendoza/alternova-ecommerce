@@ -1,26 +1,24 @@
-import { StyledButtonProps, StyledButton } from "./Button.styles"
+import { StyledButton } from "./Button.styles"
 
-interface ButtonProps extends StyledButtonProps {
+interface ButtonProps {
   name: string;
   onPress: () => void;
 }
 
 export const Button = (props:ButtonProps) => {
   
-  const {name, variant, onPress, className } = props
+  const {name, onPress } = props
   
   return (
-    <StyledButton variant={variant} onClick={onPress} className={className}>
+    <StyledButton onClick={onPress}>
       {name}
     </StyledButton>
   )
 }
 
 const defaultProps:ButtonProps = {
-  name: "Guardar",
-  variant: "primary",
+  name: "Agregar al carrito",
   onPress: () => {},
-  className: "StyledButton"
 }
 
 Button.defaultProps = defaultProps;
