@@ -1,11 +1,26 @@
-import { StyledButton, StyledCartCant, StyledNav, StyledNavTitle } from "./Nav.styles"
+import { StyledButton, StyledCartCant, StyledNav, StyledNavTitle, StyledPropsNav } from "./Nav.styles"
+import { animateScroll as scroll} from 'react-scroll';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-export const Nav = () => {
+
+interface PropsNav extends StyledPropsNav {
+  to: string;
+}
+
+export const Nav = (props:PropsNav) => {
+
+  const {to, offset, smooth, spy, duration} = props
+
   return (
 
     <StyledNav>
       <StyledNavTitle>Alternova Shop</StyledNavTitle>
-      <StyledButton>
+      <StyledButton
+        to={to}
+        spy={spy}
+        smooth={smooth}
+        offset={offset}
+        duration={duration}
+      >
         <StyledCartCant>1</StyledCartCant>
         <ShoppingCartIcon />
       </StyledButton>
@@ -13,3 +28,13 @@ export const Nav = () => {
   
   )
 }
+
+const defaultProps:PropsNav = {
+  to: "buy",
+  spy: true,
+  smooth: true,
+  offset: 0,
+  duration: 300,
+}
+
+Nav.defaultProps = defaultProps;
