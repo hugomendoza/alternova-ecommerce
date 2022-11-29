@@ -1,3 +1,4 @@
+
 import { Button } from "../Button";
 import { StyledCard,
   StyledCardProps,
@@ -16,12 +17,15 @@ interface CardProps extends StyledCardProps {
   img: string
   alt: string;
   stock?: number;
+  value: string,
+  onChange: (params: any) => any;
   onPress: () => void;
 }
 
 export const Card = (props:CardProps) => {
 
-  const {name, unit_price, type, img, onPress } = props
+  
+  const {name, unit_price, type, img, onPress, value, onChange, id } = props
 
   return (
     <>
@@ -45,7 +49,13 @@ export const Card = (props:CardProps) => {
             <StyledLabel type={type}>
               {type}
             </StyledLabel>
-            <StyledInput type="number" />
+            <StyledInput
+              type="number"
+              placeholder="0"
+              value={value}
+              onChange={onChange}
+              name={name}
+            />
           </StyledDiv>
           <Button onPress={onPress} />
         </StyledHeader>
@@ -61,7 +71,9 @@ const defaultProps:CardProps = {
   alt: "",
   type: "",
   stock: 0,
-  onPress: () => { },
+  value: "",
+  onChange: () => {},
+  onPress: () => {},
 }
 
 Card.defaultProps = defaultProps;

@@ -1,14 +1,14 @@
 import { StyledButton, StyledCartCant, StyledNav, StyledNavTitle, StyledPropsNav } from "./Nav.styles"
-import { animateScroll as scroll} from 'react-scroll';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 interface PropsNav extends StyledPropsNav {
   to: string;
+  items: number
 }
 
 export const Nav = (props:PropsNav) => {
 
-  const {to, offset, smooth, spy, duration} = props
+  const {to, offset, smooth, spy, duration, items} = props
 
   return (
 
@@ -21,7 +21,7 @@ export const Nav = (props:PropsNav) => {
         offset={offset}
         duration={duration}
       >
-        <StyledCartCant>1</StyledCartCant>
+        <StyledCartCant>{items}</StyledCartCant>
         <ShoppingCartIcon />
       </StyledButton>
     </StyledNav>
@@ -35,6 +35,7 @@ const defaultProps:PropsNav = {
   smooth: true,
   offset: 0,
   duration: 300,
+  items: 0,
 }
 
 Nav.defaultProps = defaultProps;

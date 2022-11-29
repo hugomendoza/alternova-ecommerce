@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 
+export interface StyledShoppingProps {
+  name?: string;
+  unit_price?: number;
+}
+
 export const StyledShopping = styled.article`
   ${tw `flex py-6`}
 `
@@ -19,7 +24,7 @@ export const StyledProduct = styled.div `
   ${tw `flex justify-between text-base font-medium text-gray-900`}
 `
 
-export const StyledName = styled.h3 `
+export const StyledName = styled.h3<StyledShoppingProps>`
   ${tw ``}
 `
 
@@ -27,7 +32,7 @@ export const StyledCant = styled.div `
   ${tw`flex flex-1 items-end justify-between text-sm`}
 `
 
-export const StyledText = styled.p`
+export const StyledText = styled.p<StyledShoppingProps>`
   ${tw `text-gray-500`}
 `
 
