@@ -12,6 +12,7 @@ import { StyledCard,
 } from "./Card.styles"
 
 interface CardProps extends StyledCardProps {
+  id: number,
   img: string
   alt: string;
   stock?: number;
@@ -54,12 +55,13 @@ export const Card = (props:CardProps) => {
 }
 
 const defaultProps:CardProps = {
+  id: 0,
   name: "",
   img: "",
   alt: "",
   type: "",
   stock: 0,
-  onPress: () => {},
+  onPress: () => { },
 }
 
 Card.defaultProps = defaultProps;
