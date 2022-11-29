@@ -1,12 +1,23 @@
-import { Key } from "react";
-import { Button, Card, Nav } from "./components"
+import {useState} from "react";
+import { Card, Nav, Shopping } from "./components"
 import products from "./data/products.json"
 console.log(products.products)
 
 function App() {
 
-  const onClick = () => {
-    console.log("CLick")
+  interface PropsBuying {
+    id: number;
+    stock: number;
+  }
+  
+  const [cart, setCart] = useState<PropsBuying[]>([])
+
+  const onClick = ({id, stock}:PropsBuying) => {
+    const buyItem = {
+      id:id,
+      stock: stock
+    }
+    buyItem.stock === 0 ? console.log("No hay Stock") : setCart([...cart, buyItem])
   }
 
   return (
@@ -14,15 +25,15 @@ function App() {
       <Nav to="buy" />
 
       <section>
-        <div className="container flex flex-wrap mx-auto mt-10">
+        <div className="container flex flex-wrap mx-auto py-10">
           <article className="lg:w-9/12 px-4">
             <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-6">
               {
                 products.products.map((product) => (
                   <Card
-                    key={product.name}
+                    key={product.id}
                     {...product}
-                    onPress={onClick}
+                    onPress={() => {onClick(product)}}
                   />
                 ))
               }
@@ -34,48 +45,11 @@ function App() {
           >
             <h2 className="text-xl font-bold">Shopping Cart</h2>
             <div className="divide-y divide-gray-200">
-              <article className="flex py-6">
-                <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                  <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center" />
-                </div>
-                <div className="ml-4 flex flex-1 flex-col">
-                  <div>
-                    <div className="flex justify-between text-base font-medium text-gray-900">
-                      <h3>
-                        Throwback Hip Bag
-                      </h3>
-                      <p className="ml-4">$90.00</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-1 items-end justify-between text-sm">
-                    <p className="text-gray-500">Cantidad: 1</p>
-                    <div className="flex">
-                      <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                    </div>
-                  </div>
-                </div>
-              </article>
-              <article className="flex py-6">
-                <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                  <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." className="h-full w-full object-cover object-center" />
-                </div>
-                <div className="ml-4 flex flex-1 flex-col">
-                  <div>
-                    <div className="flex justify-between text-base font-medium text-gray-900">
-                      <h3>
-                        Throwback Hip Bag
-                      </h3>
-                      <p className="ml-4">$90.00</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-1 items-end justify-between text-sm">
-                    <p className="text-gray-500">Cantidad: 1</p>
-                    <div className="flex">
-                      <button type="button" className="font-medium text-indigo-600 hover:text-indigo-500">Remove</button>
-                    </div>
-                  </div>
-                </div>
-              </article>
+              {
+                cart.map(() =>(
+                  <Shopping />
+                ))
+              }
               <article className="border-t border-gray-200 py-6">
                 <div className="flex justify-between text-base font-medium text-gray-900">
                   <p>Total</p>
