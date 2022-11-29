@@ -90,6 +90,15 @@ function App() {
   useEffect(() => {
     setOrderTotal(totalValue.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue))
   }, [cart])
+
+  const removeItem = (id:number):any => {
+    setCart(current =>
+      current.filter(item => {
+        return item.id !== id;
+      }),
+    );
+  };
+
   
   return (
     <>
@@ -129,6 +138,7 @@ function App() {
                           <Shopping
                             key={item.id}
                             {...item}
+                            onPress={() => {removeItem(item.id)}}
                           />
                         ))
                       }
