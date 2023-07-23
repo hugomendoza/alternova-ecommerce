@@ -4,9 +4,7 @@ import Swal from "sweetalert2";
 import "sweetalert2/dist/sweetalert2.min.css";
 
 import { Alert, Button, Card, Nav, Shopping } from "./components"
-
-import products from "./data/products.json"
-console.log(products.products)
+import { useBearStore } from "./store/store";
 
 function App() {
 
@@ -23,6 +21,7 @@ function App() {
   const [cart, setCart] = useState<PropsBuying[]>([])
   const [number, setNumber] = useState("");
   const [orderTotal, setOrderTotal] = useState(0);
+
 
   const onInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     setNumber(e.target.value);
@@ -99,7 +98,8 @@ function App() {
     );
   };
 
-  
+  const bears = useBearStore((state) => state.products);
+
   return (
     <>
       <Nav
@@ -107,9 +107,10 @@ function App() {
         items={cart.length}
       />
       <section>
+        <h1>{bears.map((e) => e.name)}</h1>
         <div className="container flex flex-wrap mx-auto py-10">
           <article className="lg:w-9/12 px-4">
-            <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-6">
+            {/* <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-6">
               {
                 products.products.map((product) => (
                   <Card
@@ -121,7 +122,7 @@ function App() {
                   />
                 ))
               }
-            </div>
+            </div> */}
           </article>
           <aside
             className="w-full lg:w-3/12 px-4 2xl:px-8 mt-8 lg:mt-0"
