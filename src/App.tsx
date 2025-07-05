@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>Alternova Ecommerce</h1>
+      <h1>Techsphere Ecommerce</h1>
     </>
   );
 }
