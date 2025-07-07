@@ -2,84 +2,84 @@
   "products": [
     {
       "id": 1,
-      "name": "iPhone 14 Pro Ma",
+      "name": "iPhone 14 Pro Max",
       "unit_price": 5000,
       "stock": 5,
       "type": "technology",
       "img": "./assets/products/iphone-14.jpg",
-      "description": "Disfruta de la pantalla más grande y la cámara más potente de la nueva generación de iPhone."
+      "description": "Enjoy the largest screen and the most powerful camera of the new iPhone generation."
     },
     {
       "id": 2,
-      "name": "Timon Racing Carrera",
+      "name": "Timon Racing Wheel",
       "unit_price": 8000,
       "stock": 2,
       "type": "technology",
       "img": "./assets/products/timon-carrera.jpg",
-      "description": "Convierte tu sala de estar en un circuito de carreras profesional con este control de juego de alta calidad."
+      "description": "Turn your living room into a professional racing circuit with this high-quality gaming wheel."
     },
     {
       "id": 3,
-      "name": "Control joystick inalámbrico",
+      "name": "Wireless Joystick Controller",
       "unit_price": 1000,
       "stock": 1,
       "type": "technology",
       "img": "./assets/products/control-inalambrico.jpg",
-      "description": "Vuela alto y fuerte con este control de juego inalámbrico para juegos de aviación."
+      "description": "Fly high and strong with this wireless joystick controller for aviation games."
     },
     {
       "id": 4,
-      "name": "Bicicleta Roadmaster",
+      "name": "Roadmaster Bike",
       "unit_price": 1800,
       "stock": 1,
       "type": "sport",
       "img": "./assets/products/bicicleta-roadmaster.jpg",
-      "description": "Disfruta de la velocidad y la comodidad con esta bicicleta de alta calidad para caminos y carreteras."
+      "description": "Enjoy speed and comfort with this high-quality road bike for roads and highways."
     },
     {
       "id": 5,
-      "name": "Bicicleta Todo Terreno",
+      "name": "All Terrain Bike",
       "unit_price": 200,
       "stock": 0,
       "type": "sport",
       "img": "./assets/products/bicicleta-todoterreno.jpg",
-      "description": "Conquista montañas y caminos con esta bicicleta de alta calidad para todo tipo de terrenos."
+      "description": "Conquer mountains and roads with this high-quality all-terrain bike."
     },
     {
       "id": 6,
-      "name": "Balon De Futbol",
+      "name": "Soccer Ball",
       "unit_price": 120,
       "stock": 6,
       "type": "sport",
       "img": "./assets/products/balon-de-futbol.jpg",
-      "description": "Patea fuerte y rápido con este balón de fútbol de alta calidad para partidos y entrenamientos."
+      "description": "Kick strong and fast with this high-quality soccer ball for games and training."
     },
     {
       "id": 7,
-      "name": "Ducha Electrica",
+      "name": "Electric Shower",
       "unit_price": 120,
       "stock": 8,
       "type": "building",
       "img": "./assets/products/ducha-electrica.jpg",
-      "description": "Disfruta de un baño relajante y rejuvenecedor con esta ducha eléctrica de alta calidad."
+      "description": "Enjoy a relaxing and rejuvenating shower with this high-quality electric shower."
     },
     {
       "id": 8,
-      "name": "Gabinete De Baño",
+      "name": "Bathroom Cabinet",
       "unit_price": 650,
       "stock": 10,
       "type": "building",
       "img": "./assets/products/gabinete-bano.jpg",
-      "description": "Agrega un toque de elegancia y estilo a tu baño con este gabinete de alta calidad."
+      "description": "Add a touch of elegance and style to your bathroom with this high-quality cabinet."
     },
     {
       "id": 9,
-      "name": "Mueble Sanitario",
+      "name": "Sanitary Furniture",
       "unit_price": 900,
       "stock": 2,
       "type": "building",
       "img": "./assets/products/mueble-sanitario.jpg",
-      "description": "Agrega un toque de modernidad y estilo a tu baño con este mueble sanitario de alta calidad."
+      "description": "Add a touch of modernity and style to your bathroom with this high-quality sanitary furniture."
     }
   ]
 }
