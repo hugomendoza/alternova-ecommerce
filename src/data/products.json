@@ -6,7 +6,8 @@
       "unit_price": 5000,
       "stock": 5,
       "type": "technology",
-      "img": "/assets/iphone-14.jpg"
+      "img": "./assets/products/iphone-14.jpg",
+      "description": "Disfruta de la pantalla más grande y la cámara más potente de la nueva generación de iPhone."
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "unit_price": 8000,
       "stock": 2,
       "type": "technology",
-      "img": "/assets/timon-carrera.jpg"
+      "img": "./assets/products/timon-carrera.jpg",
+      "description": "Convierte tu sala de estar en un circuito de carreras profesional con este control de juego de alta calidad."
     },
     {
       "id": 3,
@@ -22,15 +24,17 @@
       "unit_price": 1000,
       "stock": 1,
       "type": "technology",
-      "img": "/assets/control-inalambrico.jpg"
+      "img": "./assets/products/control-inalambrico.jpg",
+      "description": "Vuela alto y fuerte con este control de juego inalámbrico para juegos de aviación."
     },
     {
       "id": 4,
-      "name": "Bicicicleta Roadmaster",
+      "name": "Bicicleta Roadmaster",
       "unit_price": 1800,
       "stock": 1,
       "type": "sport",
-      "img": "/assets/bicicleta-roadmaster.jpg"
+      "img": "./assets/products/bicicleta-roadmaster.jpg",
+      "description": "Disfruta de la velocidad y la comodidad con esta bicicleta de alta calidad para caminos y carreteras."
     },
     {
       "id": 5,
@@ -38,7 +42,8 @@
       "unit_price": 200,
       "stock": 0,
       "type": "sport",
-      "img": "/assets/bicicleta-todoterreno.jpg"
+      "img": "./assets/products/bicicleta-todoterreno.jpg",
+      "description": "Conquista montañas y caminos con esta bicicleta de alta calidad para todo tipo de terrenos."
     },
     {
       "id": 6,
@@ -46,7 +51,8 @@
       "unit_price": 120,
       "stock": 6,
       "type": "sport",
-      "img": "/assets/balon-de-futbol.jpg"
+      "img": "./assets/products/balon-de-futbol.jpg",
+      "description": "Patea fuerte y rápido con este balón de fútbol de alta calidad para partidos y entrenamientos."
     },
     {
       "id": 7,
@@ -54,7 +60,8 @@
       "unit_price": 120,
       "stock": 8,
       "type": "building",
-      "img": "/assets/ducha-electrica.jpg"
+      "img": "./assets/products/ducha-electrica.jpg",
+      "description": "Disfruta de un baño relajante y rejuvenecedor con esta ducha eléctrica de alta calidad."
     },
     {
       "id": 8,
@@ -62,7 +69,8 @@
       "unit_price": 650,
       "stock": 10,
       "type": "building",
-      "img": "/assets/gabinete-bano.jpg"
+      "img": "./assets/products/gabinete-bano.jpg",
+      "description": "Agrega un toque de elegancia y estilo a tu baño con este gabinete de alta calidad."
     },
     {
       "id": 9,
@@ -70,7 +78,8 @@
       "unit_price": 900,
       "stock": 2,
       "type": "building",
-      "img": "/assets/mueble-sanitario.jpg"
+      "img": "./assets/products/mueble-sanitario.jpg",
+      "description": "Agrega un toque de modernidad y estilo a tu baño con este mueble sanitario de alta calidad."
     }
   ]
 }
