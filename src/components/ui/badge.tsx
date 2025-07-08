@@ -5,17 +5,17 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const badgeVariants = cva(
-  'inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden',
+  'inline-flex items-center justify-center rounded-lg border px-2 py-0.5 text-xs font-medium',
   {
     variants: {
       variant: {
-        default: 'border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90',
-        secondary:
-          'border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90',
-        destructive:
-          'border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20',
-        shopping: 'border-transparent bg-red-500/75 text-white',
-        outline: 'text-sky-900 bg-sky-100 border-none',
+        default: 'border-slate-400 bg-slate-300 text-slate-700',
+        technology: 'border-purple-400 bg-purple-200 text-purple-700',
+        sport: 'border-teal-400 bg-teal-200 text-teal-700',
+        building: 'border-violet-400 bg-violet-200 text-violet-700',
+        lowStock: 'border-red-400 bg-transparent text-red-500/75',
+        noStock: 'border-red-500/80 bg-red-500/80 text-white',
+        shopping: 'border-transparent bg-red-500/75 text-white rounded-md',
       },
     },
     defaultVariants: {
