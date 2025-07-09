@@ -1,7 +1,8 @@
-import { Badge, Trash2, Minus, Plus } from 'lucide-react';
+import { Trash2, Minus, Plus } from 'lucide-react';
 import { Button } from './button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './card';
 import { Input } from './input';
+import { Badge } from './badge';
 
 export function ShoppingCartCard() {
   return (

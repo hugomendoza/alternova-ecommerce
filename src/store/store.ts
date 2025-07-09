@@ -1,12 +1,17 @@
-import { create } from "zustand"
-import { IProducts } from "../models/models"
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
+import { createProductsSlice, type ProductsSlice } from './products.slice';
 
-import products from "../data/products.json"
+type ShareState = ProductsSlice;
 
-interface IProductsState {
-  products: IProducts[]
-}
-
-export const useBearStore = create<IProductsState>()(() => ({
-  products: products.products
-}))
+export const useEcommerceStore = create<ShareState>()(
+  devtools(
+    persist(
+      (...a) => ({
+        ...createProductsSlice(...a),
+      }),
+      { name: 'ecommerce-store' },
+    ),
+    { name: 'ecommerce-store' },
+  ),
+);

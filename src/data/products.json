@@ -6,7 +6,7 @@
       "unit_price": 5000,
       "stock": 5,
       "type": "technology",
-      "img": "./assets/products/iphone-14.jpg",
+      "img": "../src/assets/products/iphone-14.jpg",
       "description": "Enjoy the largest screen and the most powerful camera of the new iPhone generation."
     },
     {
@@ -15,7 +15,7 @@
       "unit_price": 8000,
       "stock": 2,
       "type": "technology",
-      "img": "./assets/products/timon-carrera.jpg",
+      "img": "../src/assets/products/timon-carrera.jpg",
       "description": "Turn your living room into a professional racing circuit with this high-quality gaming wheel."
     },
     {
@@ -24,7 +24,7 @@
       "unit_price": 1000,
       "stock": 1,
       "type": "technology",
-      "img": "./assets/products/control-inalambrico.jpg",
+      "img": "../src/assets/products/control-inalambrico.jpg",
       "description": "Fly high and strong with this wireless joystick controller for aviation games."
     },
     {
@@ -33,7 +33,7 @@
       "unit_price": 1800,
       "stock": 1,
       "type": "sport",
-      "img": "./assets/products/bicicleta-roadmaster.jpg",
+      "img": "../src/assets/products/bicicleta-roadmaster.jpg",
       "description": "Enjoy speed and comfort with this high-quality road bike for roads and highways."
     },
     {
@@ -42,7 +42,7 @@
       "unit_price": 200,
       "stock": 0,
       "type": "sport",
-      "img": "./assets/products/bicicleta-todoterreno.jpg",
+      "img": "../src/assets/products/bicicleta-todoterreno.jpg",
       "description": "Conquer mountains and roads with this high-quality all-terrain bike."
     },
     {
@@ -51,7 +51,7 @@
       "unit_price": 120,
       "stock": 6,
       "type": "sport",
-      "img": "./assets/products/balon-de-futbol.jpg",
+      "img": "../src/assets/products/balon-de-futbol.jpg",
       "description": "Kick strong and fast with this high-quality soccer ball for games and training."
     },
     {
@@ -60,7 +60,7 @@
       "unit_price": 120,
       "stock": 8,
       "type": "building",
-      "img": "./assets/products/ducha-electrica.jpg",
+      "img": "../src/assets/products/ducha-electrica.jpg",
       "description": "Enjoy a relaxing and rejuvenating shower with this high-quality electric shower."
     },
     {
@@ -69,7 +69,7 @@
       "unit_price": 650,
       "stock": 10,
       "type": "building",
-      "img": "./assets/products/gabinete-bano.jpg",
+      "img": "../src/assets/products/gabinete-bano.jpg",
       "description": "Add a touch of elegance and style to your bathroom with this high-quality cabinet."
     },
     {
@@ -78,7 +78,7 @@
       "unit_price": 900,
       "stock": 2,
       "type": "building",
-      "img": "./assets/products/mueble-sanitario.jpg",
+      "img": "../src/assets/products/mueble-sanitario.jpg",
       "description": "Add a touch of modernity and style to your bathroom with this high-quality sanitary furniture."
     }
   ]
