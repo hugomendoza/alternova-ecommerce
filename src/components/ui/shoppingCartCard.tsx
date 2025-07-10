@@ -1,38 +1,42 @@
-import { Trash2, Minus, Plus } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 import { Button } from './button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './card';
-import { Input } from './input';
 import { Badge } from './badge';
+import { Counter } from './counter';
 
-export function ShoppingCartCard() {
+import type { Product } from '@/interfaces/product.interface';
+import { useEcommerceStore } from '@/store/store';
+
+export function ShoppingCartCard({ id, category, name, unit_price, stock }: Product) {
+  const removeProduct = useEcommerceStore((state) => state.removeProduct);
+
+  function onRemoveProduct(id: number) {
+    removeProduct(id);
+  }
+
   return (
     <Card className="rounded-none border-0 border-b-2 border-b-slate-200 hover:shadow-none space-y-4 py-3">
       <CardHeader className="flex justify-between items-center">
         <div className="space-y-2">
-          <CardTitle className="text-base">Control joystick inalámbrico</CardTitle>
-          <Badge>Wearebles</Badge>
-          <CardDescription>$299.00 each</CardDescription>
+          <CardTitle className="text-base">{name}</CardTitle>
+          <Badge>{category}</Badge>
+          <CardDescription>
+            $ {unit_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} each
+          </CardDescription>
         </div>
         <Button
           variant="ghost"
           className="text-red-500/70 h-auto size-12 p-0 has-[>svg]:px-0 [&_svg:not([class*='size-'])]:size-5"
+          onClick={() => onRemoveProduct(id)}
         >
           <Trash2 />
         </Button>
       </CardHeader>
       <CardContent className="p-0">
         <div className="flex justify-between items-center">
-          <div className="flex col-span-2 border border-slate-200 rounded-lg w-1/2">
-            <Button variant="ghost" className="flex-1 has-[>svg]:px-0" type="button">
-              <Minus />
-            </Button>
-            <Input className="flex-1" type="text" value="0" readOnly />
-            <Button variant="ghost" className="flex-1 has-[>svg]:px-0" type="button">
-              <Plus />
-            </Button>
-          </div>
+          <Counter />
           <div>
-            <p className="text-lg font-bold">$399</p>
+            <p className="text-lg font-bold">{unit_price * stock}</p>
           </div>
         </div>
       </CardContent>

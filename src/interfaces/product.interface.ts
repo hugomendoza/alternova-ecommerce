@@ -5,7 +5,7 @@ export interface Product {
   name: string;
   unit_price: number;
   stock: number;
-  type: BadgeVariants;
+  category: BadgeVariants;
   img: string;
   description: string;
 }

@@ -8,5 +8,5 @@ export interface ProductsSlice {
 }
 
 export const createProductsSlice: StateCreator<ProductsSlice> = () => ({
-  products: products.products,
+  products: products.products as Product[],
 });

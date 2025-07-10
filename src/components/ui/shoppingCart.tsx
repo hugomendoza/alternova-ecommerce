@@ -1,26 +1,24 @@
-import { FileWarning, DollarSignIcon } from 'lucide-react';
-import { Alert } from './alert';
-import { Button } from './button';
-import { ShoppingCartCard } from './shoppingCartCard';
+import { useEcommerceStore } from '@/store/store';
+import { ShoppingCartEmpty } from './ShoppingCartEmpty';
+import { ShoppingCartList } from './ShoppingCartList';
+import { ShoppingCartSummary } from './ShoppingCartSummary';
 
 export function ShoppingCart() {
+  const products = useEcommerceStore((state) => state.shoppingCart);
+  const total = 0;
+
+  const isEmpty = products?.length === 0;
+
   return (
     <div className="bg-white p-6 rounded-2xl border border-slate-200">
-      <Alert>
-        <FileWarning />
-        Your shopping cart is empty
-      </Alert>
-      <ShoppingCartCard />
-      <div className="flex justify-between my-4 text-lg font-bold">
-        <p>Total Order Price</p>
-        <p>$899.96</p>
-      </div>
-      <div>
-        <Button variant="secondary" className="w-full">
-          <DollarSignIcon />
-          <p>Create order</p>
-        </Button>
-      </div>
+      {isEmpty ? (
+        <ShoppingCartEmpty />
+      ) : (
+        <>
+          <ShoppingCartList products={products} />
+          <ShoppingCartSummary total={total} />
+        </>
+      )}
     </div>
   );
 }

@@ -5,7 +5,7 @@
       "name": "iPhone 14 Pro Max",
       "unit_price": 5000,
       "stock": 5,
-      "type": "technology",
+      "category": "technology",
       "img": "../src/assets/products/iphone-14.jpg",
       "description": "Enjoy the largest screen and the most powerful camera of the new iPhone generation."
     },
@@ -14,7 +14,7 @@
       "name": "Timon Racing Wheel",
       "unit_price": 8000,
       "stock": 2,
-      "type": "technology",
+      "category": "technology",
       "img": "../src/assets/products/timon-carrera.jpg",
       "description": "Turn your living room into a professional racing circuit with this high-quality gaming wheel."
     },
@@ -23,7 +23,7 @@
       "name": "Wireless Joystick Controller",
       "unit_price": 1000,
       "stock": 1,
-      "type": "technology",
+      "category": "technology",
       "img": "../src/assets/products/control-inalambrico.jpg",
       "description": "Fly high and strong with this wireless joystick controller for aviation games."
     },
@@ -32,7 +32,7 @@
       "name": "Roadmaster Bike",
       "unit_price": 1800,
       "stock": 1,
-      "type": "sport",
+      "category": "sport",
       "img": "../src/assets/products/bicicleta-roadmaster.jpg",
       "description": "Enjoy speed and comfort with this high-quality road bike for roads and highways."
     },
@@ -41,7 +41,7 @@
       "name": "All Terrain Bike",
       "unit_price": 200,
       "stock": 0,
-      "type": "sport",
+      "category": "sport",
       "img": "../src/assets/products/bicicleta-todoterreno.jpg",
       "description": "Conquer mountains and roads with this high-quality all-terrain bike."
     },
@@ -50,7 +50,7 @@
       "name": "Soccer Ball",
       "unit_price": 120,
       "stock": 6,
-      "type": "sport",
+      "category": "sport",
       "img": "../src/assets/products/balon-de-futbol.jpg",
       "description": "Kick strong and fast with this high-quality soccer ball for games and training."
     },
@@ -59,7 +59,7 @@
       "name": "Electric Shower",
       "unit_price": 120,
       "stock": 8,
-      "type": "building",
+      "category": "building",
       "img": "../src/assets/products/ducha-electrica.jpg",
       "description": "Enjoy a relaxing and rejuvenating shower with this high-quality electric shower."
     },
@@ -68,7 +68,7 @@
       "name": "Bathroom Cabinet",
       "unit_price": 650,
       "stock": 10,
-      "type": "building",
+      "category": "building",
       "img": "../src/assets/products/gabinete-bano.jpg",
       "description": "Add a touch of elegance and style to your bathroom with this high-quality cabinet."
     },
@@ -77,7 +77,7 @@
       "name": "Sanitary Furniture",
       "unit_price": 900,
       "stock": 2,
-      "type": "building",
+      "category": "building",
       "img": "../src/assets/products/mueble-sanitario.jpg",
       "description": "Add a touch of modernity and style to your bathroom with this high-quality sanitary furniture."
     }
