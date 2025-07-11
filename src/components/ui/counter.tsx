@@ -1,39 +1,36 @@
-import { Minus, Plus } from 'lucide-react'
-import { Button } from './button'
-import { Input } from './input'
-import { useState } from 'react'
+import { Minus, Plus } from 'lucide-react';
+import { Button } from './button';
+import { Input } from './input';
 
-export function Counter() {
-  const [counter, setCounter] = useState<number>(0)
+interface Props {
+  value: number;
+  disabled?: boolean;
+  increment: () => void;
+  decrement: () => void;
+}
 
-  function onIncreaseCounter() {
-    setCounter(counter + 1)
-  }
-
-  function onDecreaseCounter() {
-    if (counter === 0) return
-    setCounter(counter - 1)
-  }
-
+export function Counter({ value = 0, decrement, increment, disabled = false }: Props) {
   return (
     <div className="flex col-span-2 border border-slate-200 rounded-lg">
       <Button
-        onClick={onDecreaseCounter}
+        onClick={decrement}
         variant="ghost"
         className="flex-1 has-[>svg]:px-0"
         type="button"
+        disabled={disabled}
       >
         <Minus />
       </Button>
-      <Input className="flex-1 text-black" type="text" value={counter} readOnly />
+      <Input disabled={disabled} className="flex-1 text-black" type="text" value={value} readOnly />
       <Button
-        onClick={onIncreaseCounter}
+        onClick={increment}
         variant="ghost"
         className="flex-1 has-[>svg]:px-0"
         type="button"
+        disabled={disabled}
       >
         <Plus />
       </Button>
     </div>
-  )
+  );
 }

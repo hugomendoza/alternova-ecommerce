@@ -1,11 +1,18 @@
 export type BadgeVariants = 'technology' | 'sport' | 'building';
 
-export interface Product {
+export interface ProductBase {
   id: number;
   name: string;
   unit_price: number;
-  stock: number;
   category: BadgeVariants;
-  img: string;
+}
+
+export interface Product extends ProductBase {
   description: string;
+  img: string;
+  stock: number;
+}
+
+export interface CartItem extends ProductBase {
+  quantity: number;
 }

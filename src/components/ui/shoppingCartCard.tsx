@@ -4,14 +4,25 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from './car
 import { Badge } from './badge';
 import { Counter } from './counter';
 
-import type { Product } from '@/interfaces/product.interface';
+import type { CartItem } from '@/interfaces/product.interface';
 import { useEcommerceStore } from '@/store/store';
 
-export function ShoppingCartCard({ id, category, name, unit_price, stock }: Product) {
+export function ShoppingCartCard(product: CartItem) {
   const removeProduct = useEcommerceStore((state) => state.removeProduct);
+  const restoreProduct = useEcommerceStore((state) => state.restoreProduct);
+
+  const { id, category, name, unit_price, quantity } = product;
+
+  // const { counter, decrement, increment } = useCounter({
+  //   initialValue: quantity,
+  //   stock,
+  // });
+
+  // console.log(stock);
 
   function onRemoveProduct(id: number) {
     removeProduct(id);
+    // restoreProduct(product);
   }
 
   return (
@@ -33,10 +44,13 @@ export function ShoppingCartCard({ id, category, name, unit_price, stock }: Prod
         </Button>
       </CardHeader>
       <CardContent className="p-0">
-        <div className="flex justify-between items-center">
-          <Counter />
-          <div>
-            <p className="text-lg font-bold">{unit_price * stock}</p>
+        <div className="grid grid-cols-4 gap-4">
+          {/* <Counter value={counter} decrement={() => decrement()} increment={() => increment()} /> */}
+          {quantity}
+          <div className="col-span-2 text-right">
+            <p className="text-lg font-bold">
+              $ {unit_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+            </p>
           </div>
         </div>
       </CardContent>
