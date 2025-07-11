@@ -1,27 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-interface Props {
-  initialValue: number;
-}
+export const useCounter = (initialStock: number) => {
+  const [counter, setCounter] = useState<number>(0);
+  const [stockLeft, setStockLeft] = useState<number>(initialStock);
+  const [noStock, setNoStock] = useState<boolean>(false);
 
-export const useCounter = ({ initialValue }: Props) => {
-  const [counter, setCounter] = useState(initialValue);
-
-  const increment = (value: number = 1) => {
-    setCounter((current) => current + value);
+  const increment = () => {
+    if (stockLeft === 0) return;
+    setCounter((current) => current + 1);
+    setStockLeft((current) => current - 1);
   };
 
-  const decrement = (value: number = 1) => {
+  const decrement = () => {
     if (counter === 0) return;
-    setCounter((current) => current - value);
+    setCounter((current) => current - 1);
+    setStockLeft((current) => current + 1);
   };
 
-  const reset = () => {
-    setCounter(initialValue);
-  };
+  const reset = () => setCounter(0);
+
+  useEffect(() => {
+    setNoStock(initialStock === 0 || stockLeft === 0);
+  }, [initialStock, stockLeft]);
 
   return {
     counter,
+    stockLeft,
+    noStock,
+
     increment,
     decrement,
     reset,

@@ -1,47 +1,24 @@
-import { useEffect, useState } from 'react';
 import { useEcommerceStore } from '@/store/store';
+import { useCounter } from '@/hooks/useCounter';
 import { Badge } from './badge';
 import { Button } from './button';
 import { Card, CardHeader, CardContent, CardTitle, CardDescription, CardFooter } from './card';
 import { Counter } from './counter';
 
-import type { Product } from '@/interfaces/product.interface';
+import type { CartItem, Product } from '@/interfaces/product.interface';
 
-export function ProductCard(product: Product) {
+interface Props {
+  product: Product;
+  onAddProductToCart: (product: CartItem, quantity: number) => void;
+}
+
+export function ProductCard({ product, onAddProductToCart }: Props) {
   const { category, description, img, name, stock, unit_price } = product;
-  const addProduct = useEcommerceStore((state) => state.addProduct);
   const updateProduct = useEcommerceStore((state) => state.updateProduct);
 
-  const [handleStock, setHandleStock] = useState({
-    counter: 0,
-    stockLeft: stock,
-  });
+  const { counter, decrement, increment, noStock, reset, stockLeft } = useCounter(stock);
 
-  const [noStock, setNoStock] = useState<boolean>(false);
-
-  const { counter, stockLeft } = handleStock;
-
-  const increment = () => {
-    if (stockLeft === 0) return;
-
-    setHandleStock(({ counter, stockLeft }) => ({
-      counter: counter + 1,
-      stockLeft: stockLeft - 1,
-    }));
-  };
-
-  const decrement = () => {
-    if (counter === 0) return;
-
-    setHandleStock(({ counter, stockLeft }) => ({
-      counter: counter - 1,
-      stockLeft: stockLeft + 1,
-    }));
-  };
-
-  const reset = () => setHandleStock({ counter: 0, stockLeft: stock });
-
-  function onAddProductToCart() {
+  function onAddToCart() {
     const newProduct = {
       id: product.id,
       category,
@@ -50,16 +27,9 @@ export function ProductCard(product: Product) {
       quantity: counter,
     };
 
-    addProduct({ ...newProduct });
-    updateProduct({ ...product, stock: stockLeft });
+    onAddProductToCart({ ...newProduct });
     reset();
   }
-
-  useEffect(() => {
-    if (stock === 0 || stockLeft === 0) {
-      setNoStock(true);
-    }
-  }, [stock, stockLeft]);
 
   return (
     <Card>
@@ -71,18 +41,20 @@ export function ProductCard(product: Product) {
           <Badge className="capitalize" variant={product.category}>
             {category}
           </Badge>
-          {noStock && <Badge variant="noStock">Out of Stock</Badge>}
-          {stockLeft < 3 && stockLeft > 0 && (
+          {noStock ? (
+            <Badge variant="noStock">Out of Stock</Badge>
+          ) : stockLeft < 3 && stockLeft > 0 ? (
             <Badge variant="lowStock">
               Low Stock <span className="font-extrabold mx-0.5">{stockLeft}</span> left
             </Badge>
-          )}
+          ) : null}
         </div>
         <CardTitle>{name}</CardTitle>
         <CardDescription className="truncate">{description}</CardDescription>
         <p className="text-lg font-bold">
           $ {unit_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
         </p>
+        <p>stock: {stock}</p> <p>stockLeft: {stockLeft}</p>
       </CardContent>
       <CardFooter className="p-4">
         <div className="grid grid-cols-5 gap-4">
@@ -93,12 +65,7 @@ export function ProductCard(product: Product) {
             increment={() => increment()}
           />
           <div className="col-span-3">
-            <Button
-              onClick={onAddProductToCart}
-              type="button"
-              className="w-full"
-              disabled={counter === 0}
-            >
+            <Button onClick={onAddToCart} type="button" className="w-full" disabled={counter === 0}>
               Add to cart
             </Button>
           </div>
